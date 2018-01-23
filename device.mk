@@ -142,23 +142,6 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     dtbo
 
-# Build necessary packages for vendor
-PRODUCT_PACKAGES += \
-    ese-ls-provision \
-    ese-replay \
-    libjson \
-    libsensorndkbridge:32 \
-    libtinyxml
-
-# Add missing vendor props
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true \
-    media.mediadrmservice.enable=true \
-    ro.oem_unlock.pst_offset=6144 \
-    ro.oem_unlock.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/misc \
-    ro.hardware.egl=adreno \
-    ro.gfx.driver.0=com.google.pixel.wahoo.gfxdrv
-
 # Setting vendor SPL
 VENDOR_SECURITY_PATCH := "2020-08-05"
 
@@ -757,6 +740,37 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.protected_contents=true
 
+<<<<<<< HEAD
+=======
+# Add missing vendor props
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true \
+    media.mediadrmservice.enable=true \
+    ro.gfx.driver.0=com.google.pixel.wahoo.gfxdrv \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
+    ro.oem_unlock.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/misc \
+    ro.oem_unlock.pst_offset=6144
+
+# Build necessary packages for vendor
+PRODUCT_PACKAGES += \
+    chre \
+    ese-ls-provision \
+    ese-replay \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor \
+    libjson \
+    librmnetctl:64 \
+    libsensorndkbridge:32 \
+    libtinyxml
+
+# EUICC feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
+
+>>>>>>> 2c034008... wahoo: Enable EUICC Sim
 # Early phase offset configuration for SurfaceFlinger
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    debug.sf.early_phase_offset_ns=1500000
