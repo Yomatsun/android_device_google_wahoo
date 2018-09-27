@@ -740,8 +740,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.protected_contents=true
 
-<<<<<<< HEAD
-=======
 # Add missing vendor props
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
@@ -769,7 +767,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
 
->>>>>>> 2c034008... wahoo: Enable EUICC Sim
+# Shared java libs
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras
+
 # Early phase offset configuration for SurfaceFlinger
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    debug.sf.early_phase_offset_ns=1500000
