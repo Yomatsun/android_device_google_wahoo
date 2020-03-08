@@ -29,6 +29,10 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 endif
 PRODUCT_ACTIONABLE_COMPATIBLE_PROPERTY_DISABLE := true
 
+# EUICC feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
+    	
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
