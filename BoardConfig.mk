@@ -37,6 +37,10 @@ BOARD_KERNEL_IMAGE_NAME := Image.lz4-dtb
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
 KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/arm64-gcc/bin
 
+# Build vendor image
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_SIZE := 524288000
+
 BOARD_KERNEL_CMDLINE += androidboot.hardware=$(TARGET_BOOTLOADER_BOARD_NAME) androidboot.console=ttyMSM0 lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
