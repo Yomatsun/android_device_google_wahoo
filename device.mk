@@ -142,6 +142,23 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     dtbo
 
+# Build necessary packages for vendor
+PRODUCT_PACKAGES += \
+    ese-ls-provision \
+    ese-replay \
+    libjson \
+    libsensorndkbridge:32 \
+    libtinyxml
+
+# Add missing vendor props
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true \
+    media.mediadrmservice.enable=true \
+    ro.oem_unlock.pst_offset=6144 \
+    ro.oem_unlock.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/misc \
+    ro.hardware.egl=adreno \
+    ro.gfx.driver.0=com.google.pixel.wahoo.gfxdrv
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
