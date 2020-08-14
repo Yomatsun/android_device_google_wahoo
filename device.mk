@@ -159,6 +159,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.egl=adreno \
     ro.gfx.driver.0=com.google.pixel.wahoo.gfxdrv
 
+# Setting vendor SPL
+VENDOR_SECURITY_PATCH := "2020-08-05"
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
