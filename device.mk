@@ -489,9 +489,9 @@ HOSTAPD := hostapd
 HOSTAPD += hostapd_cli
 PRODUCT_PACKAGES += $(HOSTAPD)
 
-WPA := wpa_supplicant.conf
-WPA += wpa_supplicant_wcn.conf
-WPA += wpa_supplicant
+WPA := $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf
+WPA += $(LOCAL_PATH)/configs/wifi/wpa_supplicant_wcn.conf
+WPA += $(LOCAL_PATH)/configs/wifi/wpa_supplicant
 PRODUCT_PACKAGES += $(WPA)
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
