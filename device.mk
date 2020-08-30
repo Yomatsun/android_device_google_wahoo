@@ -32,8 +32,8 @@ PRODUCT_ACTIONABLE_COMPATIBLE_PROPERTY_DISABLE := true
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.adb.secure=1
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#    ro.adb.secure=1
 
 PRODUCT_SOONG_NAMESPACES += \
     device/google/wahoo \
@@ -126,6 +126,18 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     dtbo
 
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+    
 # Build necessary packages for vendor
 PRODUCT_PACKAGES += \
     ese-ls-provision \
@@ -215,6 +227,18 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml \
     frameworks/native/data/etc/android.hardware.telephony.carrierlock.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.carrierlock.xml \
 
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+    
 # power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.pixel-libperfmgr
