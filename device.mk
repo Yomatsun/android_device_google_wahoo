@@ -762,7 +762,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor \
     libjson \
-    librmnetctl:64 \
     libsensorndkbridge:32 \
     libtinyxml
 
