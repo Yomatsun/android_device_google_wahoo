@@ -771,8 +771,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
-<<<<<<< HEAD
-=======
 # IMS
 PRODUCT_PACKAGES += \
     PresencePolling \
@@ -782,7 +780,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
 
->>>>>>> 9669a855... wahoo: Set OPA property to enable google assistant
 # Early phase offset configuration for SurfaceFlinger
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    debug.sf.early_phase_offset_ns=1500000
